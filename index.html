@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050706">
+<title>SMARTBIZ – Business Management Platform (FOR SALE)</title>
+<meta name="description" content="SMARTBIZ is a modern, responsive business management platform. This website is for sale.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2310b981'/%3E%3Cpath d='M26 62l16-18 12 10 20-26' stroke='%23041' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap">
+<style>
+:root{--bg:#050706;--bg2:#0a0f0d;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.09);--tx:#eef5f1;--mut:#8fa39a;--em:#10b981;--em2:#34d399;--red:#f87171;--amb:#fbbf24;--glow:0 0 40px rgba(16,185,129,.45);--r:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:hidden}
+body{background:var(--bg);color:var(--tx);font-family:'Sora',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(700px 420px at 85% -5%,rgba(16,185,129,.16),transparent),radial-gradient(600px 400px at -5% 40%,rgba(16,185,129,.08),transparent)}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--em2);outline-offset:2px}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;margin-bottom:12px}
+.lead{color:var(--mut);max-width:620px;margin-bottom:40px}
+.glass{background:var(--card);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:14px;font-weight:700;border:1px solid var(--line);background:var(--card);cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
+.btn:hover{transform:translateY(-2px)}
+.btn-p{background:linear-gradient(135deg,var(--em2),var(--em));color:#03140d;border:0;box-shadow:0 8px 30px rgba(16,185,129,.35)}
+.btn-p:hover{box-shadow:0 10px 40px rgba(16,185,129,.6)}
+.btn-sm{padding:8px 14px;border-radius:10px;font-size:.82rem}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(5,7,6,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;letter-spacing:.04em}
+.logo i{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--em2),var(--em));display:grid;place-items:center;box-shadow:var(--glow)}
+.logo svg{width:18px;height:18px}
+.links{display:flex;align-items:center;gap:6px}
+.links a{padding:8px 14px;border-radius:10px;color:var(--mut);font-size:.92rem;transition:.2s}
+.links a:hover,.links a.on{color:var(--tx);background:var(--card)}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.14);border:1px solid rgba(16,185,129,.5);color:var(--em2);font-weight:800;font-size:.72rem;padding:5px 12px;border-radius:99px;letter-spacing:.06em;white-space:nowrap}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--em2);box-shadow:0 0 10px var(--em2)}
+.burger{display:none;background:var(--card);border:1px solid var(--line);border-radius:10px;width:42px;height:42px;cursor:pointer}
+.burger span{display:block;width:18px;height:2px;background:var(--tx);margin:4px auto;transition:.25s}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+/* hero */
+.hero{padding-top:130px;text-align:center}
+.hero h1{font-size:clamp(2.4rem,7.5vw,5rem);font-weight:800;margin:22px auto 18px;max-width:880px;animation:up .8s both}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--em2),var(--em));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:var(--mut);font-size:clamp(1rem,2.4vw,1.2rem);max-width:640px;margin:0 auto 32px;animation:up .8s .1s both}
+.cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;animation:up .8s .2s both}
+.sold{display:inline-block;font-weight:800;letter-spacing:.14em;font-size:clamp(1rem,3vw,1.3rem);padding:10px 28px;border-radius:14px;color:#03140d;background:linear-gradient(135deg,var(--em2),var(--em));box-shadow:var(--glow);animation:pulse 2.6s infinite}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pulse{50%{box-shadow:0 0 70px rgba(16,185,129,.8)}}
+.preview{margin:56px auto 0;max-width:920px;padding:14px;animation:up 1s .35s both;box-shadow:0 30px 90px rgba(16,185,129,.12)}
+.pv-top{display:flex;gap:6px;padding:4px 6px 12px}.pv-top b{width:10px;height:10px;border-radius:50%;background:#2a3530}
+.pv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+.pv-c{padding:14px;text-align:left;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px}
+.pv-c small{color:var(--mut);font-size:.72rem}.pv-c div{font-weight:800;font-size:clamp(1rem,3vw,1.5rem)}
+.pv-bars{display:flex;align-items:flex-end;gap:2.5%;height:150px;padding:14px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px}
+.pv-bars i{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(var(--em2),rgba(16,185,129,.2));transform-origin:bottom;animation:grow 1.2s .8s both}
+.pv-bars i:nth-child(even){background:linear-gradient(#2f4a3f,rgba(47,74,63,.2))}
+@keyframes grow{from{transform:scaleY(0)}}
+/* features */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat{padding:28px;transition:.25s}
+.feat:hover{border-color:rgba(16,185,129,.5);transform:translateY(-4px)}
+.ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);margin-bottom:18px;font-size:1.4rem}
+.feat h3{font-size:1.1rem;margin-bottom:8px}.feat p{color:var(--mut);font-size:.93rem}
+/* demo */
+.note{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 16px;margin-bottom:16px;font-size:.85rem;color:var(--mut)}
+.app{display:grid;grid-template-columns:220px 1fr;gap:16px;align-items:start}
+.side{padding:14px;position:sticky;top:84px}
+.side button{display:flex;width:100%;align-items:center;gap:10px;padding:11px 14px;margin-bottom:4px;border-radius:12px;border:0;background:none;color:var(--mut);cursor:pointer;font-weight:600;font-size:.92rem;text-align:left;transition:.2s}
+.side button:hover{background:var(--card);color:var(--tx)}
+.side button.on{background:rgba(16,185,129,.15);color:var(--em2)}
+.main{padding:22px;min-height:520px;min-width:0}
+.main h3{font-size:1.3rem;margin-bottom:16px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.stat{padding:16px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.stat small{color:var(--mut);font-size:.78rem}.stat b{display:block;font-size:1.4rem;margin-top:2px}
+.up{color:var(--em2)}.dn{color:var(--red)}
+.panel{padding:16px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--line);margin-bottom:16px}
+.panel h4{font-size:.95rem;margin-bottom:12px;color:var(--mut);font-weight:600}
+.two{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}
+form.add{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+form.add input,form.add select{flex:1 1 130px;min-width:0;padding:11px 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--line);outline:0}
+form.add select option{background:#0a0f0d}
+form.add input:focus,form.add select:focus{border-color:var(--em)}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:420px}
+th{color:var(--mut);font-weight:600;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:10px;border-bottom:1px solid rgba(255,255,255,.05)}
+.pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid var(--line);background:none;cursor:pointer}
+.p-g{color:var(--em2);border-color:rgba(16,185,129,.5);background:rgba(16,185,129,.1)}
+.p-a{color:var(--amb);border-color:rgba(251,191,36,.5);background:rgba(251,191,36,.08)}
+.p-r{color:var(--red);border-color:rgba(248,113,113,.5);background:rgba(248,113,113,.08)}
+.x{background:none;border:0;color:var(--mut);cursor:pointer;padding:4px 8px;border-radius:8px;font-size:1rem}.x:hover{color:var(--red);background:rgba(248,113,113,.1)}
+.empty{padding:28px;text-align:center;color:var(--mut)}
+.legend{display:flex;gap:14px;font-size:.78rem;color:var(--mut);margin-top:8px}.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+svg text{fill:#8fa39a;font-size:11px;font-family:inherit}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:#0f1c17;border:1px solid var(--em);color:var(--tx);padding:12px 20px;border-radius:12px;opacity:0;pointer-events:none;transition:.3s;z-index:99;font-size:.9rem;max-width:90vw}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.why .glass{padding:26px}.why h3{font-size:1.05rem;margin-bottom:6px;color:var(--em2)}.why p{color:var(--mut);font-size:.93rem}
+/* sale */
+.sale{padding:56px 28px;text-align:center;border-color:rgba(16,185,129,.4);box-shadow:0 0 90px rgba(16,185,129,.15);position:relative;overflow:hidden}
+.sale::before{content:"";position:absolute;left:50%;top:-120px;width:480px;height:300px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(16,185,129,.35),transparent);pointer-events:none}
+.sale>*{position:relative}
+.sale h2{font-size:clamp(2rem,6vw,3.6rem);margin:18px 0 14px}
+.sale .d{color:var(--mut);max-width:620px;margin:0 auto 28px;font-size:1.05rem}
+.incl{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:760px;margin:0 auto 32px}
+.incl span{padding:9px 16px;border-radius:99px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);font-size:.88rem}
+.incl span::before{content:"✓ ";color:var(--em2);font-weight:800}
+.btn-big{font-size:1.1rem;padding:18px 40px;border-radius:16px;box-shadow:0 0 50px rgba(16,185,129,.6);animation:pulse 2.6s infinite}
+.btn-tg{background:linear-gradient(135deg,#2aabee,#1c8ed1);color:#fff;border:0;font-size:1.05rem;padding:16px 28px;border-radius:16px;box-shadow:0 8px 32px rgba(42,171,238,.4);flex-direction:column;gap:0;line-height:1.35}
+.btn-tg:hover{box-shadow:0 10px 44px rgba(42,171,238,.65)}
+.btn-tg .r{display:flex;align-items:center;gap:10px}
+.btn-tg small{font-weight:600;opacity:.92;font-size:.9rem}
+.btn-tg svg{width:24px;height:24px;flex:none}
+.price{margin-top:26px;font-size:1.3rem;font-weight:700}.price span{color:var(--em2)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 28px;background:var(--bg2)}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.fg p,.fg li{color:var(--mut);font-size:.92rem}.fg ul{list-style:none}.fg li{margin-bottom:8px}
+.fg h4{margin-bottom:14px;font-size:.95rem}
+.fg a:hover{color:var(--em2)}
+.fg .tgl{display:inline-flex;align-items:center;gap:8px;color:#5fc4f5;font-weight:700}
+.copy{border-top:1px solid var(--line);padding-top:22px;color:var(--mut);font-size:.85rem;text-align:center}
+/* responsive */
+@media(max-width:900px){.grid3{grid-template-columns:1fr 1fr}.app{grid-template-columns:1fr}.side{position:static;display:flex;gap:6px;overflow-x:auto;padding:8px;-webkit-overflow-scrolling:touch}.side button{width:auto;white-space:nowrap;margin:0;flex:none}.cards{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr}.fg>div:first-child{grid-column:1/-1}}
+@media(max-width:760px){
+ .burger{display:block}
+ .links{position:fixed;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;padding:14px 20px 22px;background:rgba(5,7,6,.97);border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .3s;gap:4px}
+ .links.open{transform:none}
+ .links a{padding:14px}
+ .nav .badge{display:none}.links .badge{display:inline-flex;align-self:flex-start;margin:6px 14px}
+}
+@media(min-width:761px){.links .badge{display:none}}
+@media(max-width:600px){section{padding:60px 0}.grid3,.why{grid-template-columns:1fr}.pv-grid{gap:8px}.main{padding:14px}.cta .btn,.sale .btn{width:100%}.fg{grid-template-columns:1fr}.sale{padding:40px 18px}.btn-big{padding:18px 20px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="wrap nav">
+  <a href="#home" class="logo" aria-label="SMARTBIZ home"><i><svg viewBox="0 0 24 24" fill="none" stroke="#03140d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-7 5 4 7-9"/></svg></i>SMARTBIZ</a>
+  <div style="display:flex;align-items:center;gap:12px">
+   <div class="links" id="links">
+    <a href="#home">Home</a><a href="#features">Features</a><a href="#demo">Demo</a><a href="#sale">Pricing</a><a href="#contact">Contact</a>
+    <span class="badge">FOR SALE</span>
+   </div>
+   <span class="badge">FOR SALE</span>
+   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+ </div>
+</nav>
+
+<header class="hero" id="home">
+ <div class="wrap">
+  <span class="sold">SOTILADI</span>
+  <h1>Run Your Business <em>Smarter.</em></h1>
+  <p class="sub">One powerful platform to manage your business, track performance and grow faster.</p>
+  <div class="cta">
+   <a href="#demo" class="btn btn-p">Explore Live Demo</a>
+   <a href="#sale" class="btn">BUY THIS WEBSITE</a>
+  </div>
+  <div class="preview glass" aria-hidden="true">
+   <div class="pv-top"><b></b><b></b><b></b></div>
+   <div class="pv-grid">
+    <div class="pv-c"><small>Income</small><div class="up">$8,400</div></div>
+    <div class="pv-c"><small>Expenses</small><div class="dn">$4,300</div></div>
+    <div class="pv-c"><small>Profit</small><div>$4,100</div></div>
+   </div>
+   <div class="pv-bars" id="pvBars"></div>
+  </div>
+ </div>
+</header>
+
+<section id="features">
+ <div class="wrap">
+  <h2>Everything your business needs</h2>
+  <p class="lead">Six core modules, built into one clean workspace.</p>
+  <div class="grid3">
+   <div class="feat glass"><div class="ico">💰</div><h3>Income &amp; Expense Tracking</h3><p>Record every sale and cost, and see your profit at a glance.</p></div>
+   <div class="feat glass"><div class="ico">📦</div><h3>Order Management</h3><p>Create orders and move them from pending to shipped to delivered.</p></div>
+   <div class="feat glass"><div class="ico">🏷️</div><h3>Inventory Management</h3><p>Keep stock counts up to date and spot low-stock items early.</p></div>
+   <div class="feat glass"><div class="ico">👥</div><h3>Customer Management</h3><p>Keep every customer’s contact details and total spend in one list.</p></div>
+   <div class="feat glass"><div class="ico">📊</div><h3>Business Analytics</h3><p>Interactive charts show how income and expenses change over time.</p></div>
+   <div class="feat glass"><div class="ico">🗓️</div><h3>Monthly Reports</h3><p>Compare months side by side and export your numbers as CSV.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="demo">
+ <div class="wrap">
+  <h2>Try the live dashboard</h2>
+  <p class="lead">A working demo. Add, change and delete records; your changes stay in this browser after a refresh.</p>
+  <div class="note glass"><span>ℹ️ All data below is <b>sample data</b>. Nothing is sent to a server.</span><button class="btn btn-sm" id="reset">Reset sample data</button></div>
+  <div class="app">
+   <div class="side glass" id="side"></div>
+   <div class="main glass" id="view"></div>
+  </div>
+ </div>
+</section>
+
+<section id="why">
+ <div class="wrap">
+  <h2>Why SMARTBIZ?</h2>
+  <p class="lead">Small businesses don’t need heavy enterprise software. They need clarity.</p>
+  <div class="why">
+   <div class="glass"><h3>Replace spreadsheets and notebooks</h3><p>Shops and entrepreneurs often track money in several places. SMARTBIZ keeps income, orders, stock and customers together.</p></div>
+   <div class="glass"><h3>Know your profit every month</h3><p>See what came in, what went out and what is left, without doing the math by hand.</p></div>
+   <div class="glass"><h3>Works on any phone</h3><p>The layout adapts to small screens, so you can manage the business from a counter, a market stall or a delivery route.</p></div>
+   <div class="glass"><h3>Simple to own and change</h3><p>Plain HTML, CSS and JavaScript. No framework or build step. Any developer can customize it quickly.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="sale">
+ <div class="wrap">
+  <div class="sale glass">
+   <span class="sold">SOTILADI</span>
+   <h2>THIS WEBSITE IS FOR SALE</h2>
+   <p class="d">A modern, responsive and functional business management platform. Ready for customization and ownership.</p>
+   <div class="incl">
+    <span>Complete source code</span><span>Responsive design</span><span>Interactive dashboard</span><span>Customization possibilities</span><span>Documentation</span>
+   </div>
+   <div class="cta">
+    <a class="btn btn-p btn-big" data-tg href="https://t.me/Salom_uzbekman" target="_blank" rel="noopener noreferrer">PURCHASE THIS WEBSITE</a>
+    <a class="btn btn-tg" data-tg href="https://t.me/Salom_uzbekman" target="_blank" rel="noopener noreferrer">
+     <span class="r"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.1 2.8 11.5c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.8c.2.6.4.8.9.8s.7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8l3.2-15.1c.3-1.3-.5-1.9-1.7-1.4zM9 14l9.6-6c.5-.3.9-.1.5.2l-7.9 7.1-.3 3.3z"/></svg><span>Telegram orqali bog‘lanish</span></span>
+     <small data-tg-handle>@Salom_uzbekman</small>
+    </a>
+   </div>
+   <p class="price">Price: <span>Negotiable</span></p>
+  </div>
+ </div>
+</section>
+
+<footer id="contact">
+ <div class="wrap">
+  <div class="fg">
+   <div>
+    <a href="#home" class="logo"><i><svg viewBox="0 0 24 24" fill="none" stroke="#03140d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-7 5 4 7-9"/></svg></i>SMARTBIZ</a>
+    <p style="margin-top:14px;max-width:320px">A modern business management platform. This website is for sale.</p>
+   </div>
+   <div><h4>Navigation</h4><ul><li><a href="#home">Home</a></li><li><a href="#features">Features</a></li><li><a href="#demo">Demo</a></li><li><a href="#sale">Pricing</a></li></ul></div>
+   <div><h4>Contact</h4><ul>
+    <li><a class="tgl" data-tg href="https://t.me/Salom_uzbekman" target="_blank" rel="noopener noreferrer">✈ Telegram: <span data-tg-handle>@Salom_uzbekman</span></a></li>
+    <li>Email: <a href="mailto:hello@example.com">hello@example.com</a> (placeholder)</li>
+   </ul></div>
+  </div>
+  <div class="copy">© <span id="yr">2026</span> SMARTBIZ. All rights reserved. Demo data is sample data only.</div>
+ </div>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== CONFIG: replace USERNAME with your Telegram username (no @) ===== */
+const USERNAME = "Salom_uzbekman";
+/* ======================================================================= */
+const TG_URL = "https://t.me/" + USERNAME;
+document.querySelectorAll("[data-tg]").forEach(a => a.href = TG_URL);
+document.querySelectorAll("[data-tg-handle]").forEach(e => e.textContent = "@" + USERNAME);
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = n => "$" + Number(n).toLocaleString("en-US");
+const MN = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+let toastT;
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),2200)}
+
+/* nav */
+const burger=$("#burger"),links=$("#links");
+burger.onclick=()=>{const o=links.classList.toggle("open");burger.classList.toggle("open",o);burger.setAttribute("aria-expanded",o)};
+links.querySelectorAll("a").forEach(a=>a.onclick=()=>{links.classList.remove("open");burger.classList.remove("open")});
+const secs=[...document.querySelectorAll("header[id],section[id],footer[id]")];
+addEventListener("scroll",()=>{let c="home";secs.forEach(s=>{if(s.getBoundingClientRect().top<140)c=s.id});links.querySelectorAll("a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+(c==="why"?"features":c)))},{passive:true});
+
+/* hero bars */
+$("#pvBars").innerHTML=[40,55,48,66,60,78,70,88,82,100].map(h=>`<i style="height:${h}%"></i>`).join("");
+
+/* ===== demo data ===== */
+const KEY="smartbiz_demo_v1";
+function seed(){
+ const d=new Date(),tx=[];let id=1;
+ const inc=[5200,6100,5800,7000,7600,8400],exp=[3100,3400,3300,3900,4100,4300];
+ for(let i=0;i<6;i++){
+  const m=5-i,dt=new Date(d.getFullYear(),d.getMonth()-m,10).toISOString().slice(0,10);
+  tx.push({id:id++,t:"income",title:"Retail sales",cat:"Sales",amt:Math.round(inc[i]*.7),date:dt});
+  tx.push({id:id++,t:"income",title:"Online orders",cat:"Sales",amt:Math.round(inc[i]*.3),date:dt});
+  tx.push({id:id++,t:"expense",title:"Supplier payment",cat:"Supplies",amt:Math.round(exp[i]*.5),date:dt});
+  tx.push({id:id++,t:"expense",title:"Rent & utilities",cat:"Rent",amt:Math.round(exp[i]*.3),date:dt});
+  tx.push({id:id++,t:"expense",title:"Ads & promotion",cat:"Marketing",amt:Math.round(exp[i]*.2),date:dt});
+ }
+ return{next:100,tx,
+  orders:[{id:1,customer:"Sample Customer A",item:"Wireless headphones ×2",total:180,status:"Pending"},{id:2,customer:"Sample Customer B",item:"Phone case ×5",total:75,status:"Shipped"},{id:3,customer:"Sample Customer C",item:"Smart watch ×1",total:240,status:"Delivered"}],
+  products:[{id:1,name:"Wireless headphones",sku:"WH-100",stock:24,price:90},{id:2,name:"Phone case",sku:"PC-220",stock:8,price:15},{id:3,name:"Smart watch",sku:"SW-310",stock:15,price:240},{id:4,name:"USB-C cable",sku:"UC-050",stock:3,price:9}],
+  customers:[{id:1,name:"Sample Customer A",phone:"+000 00 000 00 01",spent:1250},{id:2,name:"Sample Customer B",phone:"+000 00 000 00 02",spent:830},{id:3,name:"Sample Customer C",phone:"+000 00 000 00 03",spent:2140}]};
+}
+let S;
+try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){S=null}
+if(!S||!S.tx)S=seed();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+const nid=()=>S.next++;
+
+/* ===== calculations ===== */
+const sum=(a,t)=>a.filter(x=>x.t===t).reduce((s,x)=>s+x.amt,0);
+function months(){
+ const d=new Date(),out=[];
+ for(let i=5;i>=0;i--){const m=new Date(d.getFullYear(),d.getMonth()-i,1),k=m.toISOString().slice(0,7);
+  const list=S.tx.filter(x=>x.date.slice(0,7)===k);
+  out.push({label:MN[m.getMonth()]+" "+String(m.getFullYear()).slice(2),inc:sum(list,"income"),exp:sum(list,"expense")})}
+ return out;
+}
+function barChart(){
+ const ms=months(),max=Math.max(1000,...ms.map(m=>Math.max(m.inc,m.exp))),W=600,H=230,pb=26,ph=H-pb-10,bw=24;
+ let g="";
+ for(let i=0;i<=4;i++){const y=10+ph-ph*i/4;g+=`<line x1="40" x2="${W}" y1="${y}" y2="${y}" stroke="rgba(255,255,255,.07)"/><text x="34" y="${y+4}" text-anchor="end">${Math.round(max*i/4/1000*10)/10}k</text>`}
+ ms.forEach((m,i)=>{const cx=40+(W-40)/6*(i+.5),hi=ph*m.inc/max,he=ph*m.exp/max;
+  g+=`<rect x="${cx-bw-2}" y="${10+ph-hi}" width="${bw}" height="${hi}" rx="5" fill="#10b981"><title>${m.label} income: ${fmt(m.inc)}</title></rect><rect x="${cx+2}" y="${10+ph-he}" width="${bw}" height="${he}" rx="5" fill="#3b5348"><title>${m.label} expenses: ${fmt(m.exp)}</title></rect><text x="${cx}" y="${H-6}" text-anchor="middle">${m.label}</text>`});
+ return`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Income and expenses by month">${g}</svg><div class="legend"><span><i style="background:#10b981"></i>Income</span><span><i style="background:#3b5348"></i>Expenses</span></div>`;
+}
+function donut(){
+ const ex=S.tx.filter(x=>x.t==="expense"),tot=ex.reduce((s,x)=>s+x.amt,0),cats={};
+ ex.forEach(x=>cats[x.cat]=(cats[x.cat]||0)+x.amt);
+ const cols=["#10b981","#34d399","#2f7a62","#6ee7b7","#1f4d3f","#a7f3d0"],R=52,C=2*Math.PI*R;
+ if(!tot)return`<div class="empty">No expenses yet.</div>`;
+ let off=0,arcs="",lg="";
+ Object.entries(cats).forEach(([k,v],i)=>{const l=C*v/tot;arcs+=`<circle r="${R}" cx="70" cy="70" fill="none" stroke="${cols[i%6]}" stroke-width="22" stroke-dasharray="${l} ${C-l}" stroke-dashoffset="${-off}" transform="rotate(-90 70 70)"><title>${esc(k)}: ${fmt(v)}</title></circle>`;off+=l;lg+=`<span><i style="background:${cols[i%6]}"></i>${esc(k)} ${Math.round(v/tot*100)}%</span>`});
+ return`<svg viewBox="0 0 140 140" width="150" style="display:block;margin:0 auto"><text x="70" y="68" text-anchor="middle" style="font-size:9px">Expenses</text><text x="70" y="82" text-anchor="middle" style="fill:#eef5f1;font-size:12px;font-weight:700">${fmt(tot)}</text>${arcs}</svg><div class="legend" style="flex-wrap:wrap;justify-content:center">${lg}</div>`;
+}
+
+/* ===== views ===== */
+const TABS=[["overview","📈","Overview"],["tx","💳","Transactions"],["orders","🧾","Orders"],["inv","📦","Inventory"],["cust","👥","Customers"],["stats","📅","Monthly stats"]];
+let tab="overview";
+function side(){$("#side").innerHTML=TABS.map(t=>`<button class="${t[0]===tab?"on":""}" data-tab="${t[0]}">${t[1]} ${t[2]}</button>`).join("")}
+const empty=m=>`<div class="empty">${m}</div>`;
+const today=()=>new Date().toISOString().slice(0,10);
+
+const V={
+overview(){
+ const i=sum(S.tx,"income"),e=sum(S.tx,"expense"),p=i-e;
+ const rec=[...S.tx].sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id).slice(0,5);
+ return`<h3>Dashboard overview</h3>
+ <div class="cards"><div class="stat"><small>Total income</small><b class="up">${fmt(i)}</b></div><div class="stat"><small>Total expenses</small><b class="dn">${fmt(e)}</b></div><div class="stat"><small>Net profit</small><b>${fmt(p)}</b></div><div class="stat"><small>Open orders</small><b>${S.orders.filter(o=>o.status!=="Delivered").length}</b></div></div>
+ <div class="two"><div class="panel"><h4>Income vs expenses, last 6 months</h4>${barChart()}</div><div class="panel"><h4>Expense breakdown</h4>${donut()}</div></div>
+ <div class="panel"><h4>Recent transactions</h4>${rec.length?`<div class="tbl"><table><tr><th>Date</th><th>Title</th><th>Amount</th></tr>${rec.map(x=>`<tr><td>${x.date}</td><td>${esc(x.title)}</td><td class="${x.t==="income"?"up":"dn"}">${x.t==="income"?"+":"−"}${fmt(x.amt)}</td></tr>`).join("")}</table></div>`:empty("No transactions yet. Add one in the Transactions tab.")}</div>`;
+},
+tx(){
+ const l=[...S.tx].sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id);
+ return`<h3>Income &amp; expenses</h3>
+ <form class="add" data-form="tx"><select name="t"><option value="income">Income</option><option value="expense">Expense</option></select><input name="title" placeholder="Title" required maxlength="40"><input name="cat" placeholder="Category" maxlength="20"><input name="amt" type="number" min="1" step="1" placeholder="Amount ($)" required><button class="btn btn-p btn-sm">Add transaction</button></form>
+ ${l.length?`<div class="tbl"><table><tr><th>Date</th><th>Title</th><th>Category</th><th>Amount</th><th></th></tr>${l.slice(0,40).map(x=>`<tr><td>${x.date}</td><td>${esc(x.title)}</td><td>${esc(x.cat||"–")}</td><td class="${x.t==="income"?"up":"dn"}">${x.t==="income"?"+":"−"}${fmt(x.amt)}</td><td><button class="x" data-del="tx" data-id="${x.id}" aria-label="Delete">✕</button></td></tr>`).join("")}</table></div>`:empty("No transactions. Add your first one above.")}`;
+},
+orders(){
+ const cls={Pending:"p-a",Shipped:"p-g",Delivered:"p-g"};
+ return`<h3>Orders</h3>
+ <form class="add" data-form="orders"><input name="customer" placeholder="Customer name" required maxlength="40"><input name="item" placeholder="Items" required maxlength="50"><input name="total" type="number" min="1" placeholder="Total ($)" required><button class="btn btn-p btn-sm">Add order</button></form>
+ ${S.orders.length?`<div class="tbl"><table><tr><th>#</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th><th></th></tr>${S.orders.map(o=>`<tr><td>${o.id}</td><td>${esc(o.customer)}</td><td>${esc(o.item)}</td><td>${fmt(o.total)}</td><td><button class="pill ${cls[o.status]}" data-status="${o.id}" title="Tap to change status">${o.status}</button></td><td><button class="x" data-del="orders" data-id="${o.id}" aria-label="Delete">✕</button></td></tr>`).join("")}</table></div>`:empty("No orders yet. Add one above.")}`;
+},
+inv(){
+ return`<h3>Product inventory</h3>
+ <form class="add" data-form="products"><input name="name" placeholder="Product name" required maxlength="40"><input name="sku" placeholder="SKU" maxlength="12"><input name="stock" type="number" min="0" placeholder="Stock" required><input name="price" type="number" min="0" placeholder="Price ($)" required><button class="btn btn-p btn-sm">Add product</button></form>
+ ${S.products.length?`<div class="tbl"><table><tr><th>Product</th><th>SKU</th><th>Price</th><th>Stock</th><th></th></tr>${S.products.map(p=>`<tr><td>${esc(p.name)}</td><td>${esc(p.sku||"–")}</td><td>${fmt(p.price)}</td><td style="white-space:nowrap"><button class="x" data-stock="-1" data-id="${p.id}" aria-label="Decrease">−</button> <b>${p.stock}</b> <button class="x" data-stock="1" data-id="${p.id}" aria-label="Increase">+</button> ${p.stock<10?'<span class="pill p-r">Low</span>':'<span class="pill p-g">OK</span>'}</td><td><button class="x" data-del="products" data-id="${p.id}" aria-label="Delete">✕</button></td></tr>`).join("")}</table></div>`:empty("No products yet. Add one above.")}`;
+},
+cust(){
+ return`<h3>Customers</h3>
+ <form class="add" data-form="customers"><input name="name" placeholder="Full name" required maxlength="40"><input name="phone" placeholder="Phone" maxlength="24"><input name="spent" type="number" min="0" placeholder="Total spent ($)"><button class="btn btn-p btn-sm">Add customer</button></form>
+ ${S.customers.length?`<div class="tbl"><table><tr><th>Name</th><th>Phone</th><th>Total spent</th><th></th></tr>${S.customers.map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.phone||"–")}</td><td>${fmt(c.spent)}</td><td><button class="x" data-del="customers" data-id="${c.id}" aria-label="Delete">✕</button></td></tr>`).join("")}</table></div>`:empty("No customers yet. Add one above.")}`;
+},
+stats(){
+ const ms=months();
+ return`<h3>Monthly statistics</h3>
+ <div class="panel"><h4>Trend</h4>${barChart()}</div>
+ <div class="panel"><h4>Report</h4><div class="tbl"><table><tr><th>Month</th><th>Income</th><th>Expenses</th><th>Profit</th></tr>${ms.map(m=>`<tr><td>${m.label}</td><td class="up">${fmt(m.inc)}</td><td class="dn">${fmt(m.exp)}</td><td>${fmt(m.inc-m.exp)}</td></tr>`).join("")}</table></div><br><button class="btn btn-sm" data-export>Download CSV report</button></div>`;
+}};
+function render(){side();$("#view").innerHTML=V[tab]()}
+
+/* ===== events ===== */
+document.addEventListener("click",e=>{
+ const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.tab){tab=b.dataset.tab;render();return}
+ if(b.dataset.del){const k=b.dataset.del,id=+b.dataset.id;S[k]=S[k].filter(x=>x.id!==id);save();render();toast("Deleted");return}
+ if(b.dataset.status){const o=S.orders.find(x=>x.id==b.dataset.status),f=["Pending","Shipped","Delivered"];o.status=f[(f.indexOf(o.status)+1)%3];save();render();toast("Order "+o.id+": "+o.status);return}
+ if(b.dataset.stock){const p=S.products.find(x=>x.id==b.dataset.id);p.stock=Math.max(0,p.stock+ +b.dataset.stock);save();render();return}
+ if(b.hasAttribute("data-export")){
+  const rows=[["Month","Income","Expenses","Profit"],...months().map(m=>[m.label,m.inc,m.exp,m.inc-m.exp])].map(r=>r.join(",")).join("\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([rows],{type:"text/csv"}));a.download="smartbiz-report.csv";document.body.appendChild(a);a.click();a.remove();toast("Report downloaded");return}
+});
+document.addEventListener("submit",e=>{
+ const f=e.target.closest("form[data-form]");if(!f)return;e.preventDefault();
+ const d=Object.fromEntries(new FormData(f)),k=f.dataset.form,n=v=>Math.max(0,Math.round(+v||0));
+ if(k==="tx")S.tx.push({id:nid(),t:d.t,title:d.title.trim(),cat:(d.cat||"").trim(),amt:n(d.amt),date:today()});
+ if(k==="orders")S.orders.push({id:(S.orders.reduce((m,o)=>Math.max(m,o.id),0))+1,customer:d.customer.trim(),item:d.item.trim(),total:n(d.total),status:"Pending"});
+ if(k==="products")S.products.push({id:nid(),name:d.name.trim(),sku:(d.sku||"").trim(),stock:n(d.stock),price:n(d.price)});
+ if(k==="customers")S.customers.push({id:nid(),name:d.name.trim(),phone:(d.phone||"").trim(),spent:n(d.spent)});
+ save();render();toast("Added");
+});
+$("#reset").onclick=()=>{if(confirm("Reset all demo data to the original sample data?")){S=seed();save();tab="overview";render();toast("Sample data restored")}};
+render();
+</script>
+</body>
+</html>
